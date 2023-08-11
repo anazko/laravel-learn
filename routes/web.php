@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\FeedController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -24,15 +25,15 @@ Route::redirect('/', '/feed');
 Route::get('/feed', [FeedController::class, 'index'])->name('feed');
 Route::get('/posts/{post}', [FeedController::class, 'show'])->name('show');
 
-Route::get('/tags', [TagController::class, 'index'])->name('tags.index');
-Route::get('/tags/{tag}', [TagController::class, 'show'])->name('tags.show');
+// Route::get('/tags', [TagController::class, 'index'])->name('tags.index');
+// Route::get('/tags/{tag}', [TagController::class, 'show'])->name('tags.show');
 
+// AUTH
 Route::controller(LoginController::class)->group(function() {
   Route::get('/login', 'index')->name('login')->middleware('guest');
   Route::get('/logout', 'logout')->name('logout');
   Route::post('/login', 'store')->name('login.store');
 });
-
 Route::controller(RegisterController::class)->group(function() {
   Route::get('/register', 'index')->name('register')->middleware('guest');
   Route::post('/register', 'store')->name('register.store');

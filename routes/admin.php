@@ -1,15 +1,13 @@
 <?php
 
-use App\Http\Controllers\Admin\UsersController;
-use App\Http\Controllers\User\PostController;
+use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('admin')
+//ADMIN
+Route::controller(AdminController::class)
+  ->prefix('admin')
   ->name('admin.')
-  ->middleware(['auth'])
+  ->middleware(['auth', 'admin'])
   ->group(function() {
-
-    Route::get('/', [UsersController::class, 'index'])->name('users');
-
-
-  });
+    Route::get('/', 'index')->name('index');
+});
