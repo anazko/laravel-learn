@@ -53,7 +53,10 @@ header {
   transition: .3s ease;
 }
 
-.main-menu__link:hover {
+
+.main-menu__link:hover,
+.main-menu__link.active
+{
   color: rgb(255, 232, 170);
 }
 
