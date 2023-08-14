@@ -1,7 +1,8 @@
-import Dashboard from "@/src/pages/Dashboard.vue"
-import Users from "@/src/pages/Users.vue"
-import Posts from "@/src/pages/Posts.vue"
 import { createRouter, createWebHistory } from "vue-router"
+
+import Dashboard from "@/pages/Dashboard.vue"
+import Users from "@/pages/Users.vue"
+import Posts from "@/pages/Posts.vue"
 
 export const routes = [
   { path: '/', component: Dashboard },
@@ -16,5 +17,3 @@ const router = createRouter({
 })
 
 export default router
-
-
