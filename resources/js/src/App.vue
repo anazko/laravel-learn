@@ -1,26 +1,25 @@
 <template lang="">
   <div>
     <Header />
-    <div class="content container">
+    <div class="container mx-auto">
       <router-view />
     </div>
   </div>
 </template>
 
 <script>
-import { defineComponent } from 'vue';
 import Header from './components/Header.vue'
- 
-export default defineComponent({
+
+ export default {
   components: {
     Header
   },
-  setup() {
+  data() {
     return {
-      text: "Hi vue!"
+      title: "Admin SPA"
     }
   }
-});
+}
 
 </script>
 
