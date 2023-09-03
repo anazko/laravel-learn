@@ -9,13 +9,13 @@
     </ul>
   </div>
   <div v-else>
-    List is empty
+    List is empty!!!
   </div>
 </template>
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
-
+ 
   export default {
     data() {
       return {
